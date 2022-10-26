@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "background": "rgba(0, 0, 0, 0.05)",
+  "data": {
+    "values": []
+  },
+  "encoding": {
+    "color": {"field": "uid"},
+    "x": {"field": "time", "type": "quantitative"},
+    "y": {"field": "num", "stack": "zero", "type": "quantitative"}
+  },
+  "height": 1000,
+  "mark": {"tooltip": {"content": "encoding"}, "type": "area"},
+  "selection": {"sel": {"bind": "legend", "fields": ["uid"], "type": "multi"}},
+  "width": 1000
+}

@@ -1,0 +1,906 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "rgba(0, 0, 0, 0.05)",
+  "padding": 5,
+  "width": 1000,
+  "height": 1000,
+  "style": "cell",
+  "data": [
+    {"name": "sel_store"},
+    {
+      "name": "source_0",
+      "values": [
+        {
+          "num": 0,
+          "time": 1666700007074.1404,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 0,
+          "time": 1666700008824.5088,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 2,
+          "time": 1666700008809.432,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 2,
+          "time": 1666700008784.2102,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 2,
+          "time": 1666700008784.17,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 2,
+          "time": 1666700007877.72,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 2,
+          "time": 1666700007718.3965,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 2,
+          "time": 1666700007177.521,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 1,
+          "time": 1666700007177.3743,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 1,
+          "time": 1666700007177.3015,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 1,
+          "time": 1666700007177.1748,
+          "uid": "transformers-compat-0.7.2-fcf0b3da3c8c5c9d640481e54f0dd85f7b558bb1695afca34dcb204981a04b7b"
+        },
+        {
+          "num": 0,
+          "time": 1666700004503.4614,
+          "uid": "tagged-0.8.6.1-b8ad9898ddb911b262ff25992940e5c5d12e554f9af5eea4acc386a79c44ecd8"
+        },
+        {
+          "num": 0,
+          "time": 1666700005533.694,
+          "uid": "tagged-0.8.6.1-b8ad9898ddb911b262ff25992940e5c5d12e554f9af5eea4acc386a79c44ecd8"
+        },
+        {
+          "num": 2,
+          "time": 1666700004903.646,
+          "uid": "tagged-0.8.6.1-b8ad9898ddb911b262ff25992940e5c5d12e554f9af5eea4acc386a79c44ecd8"
+        },
+        {
+          "num": 2,
+          "time": 1666700005513.265,
+          "uid": "tagged-0.8.6.1-b8ad9898ddb911b262ff25992940e5c5d12e554f9af5eea4acc386a79c44ecd8"
+        },
+        {
+          "num": 2,
+          "time": 1666700004574.0217,
+          "uid": "tagged-0.8.6.1-b8ad9898ddb911b262ff25992940e5c5d12e554f9af5eea4acc386a79c44ecd8"
+        },
+        {
+          "num": 1,
+          "time": 1666700004558.7632,
+          "uid": "tagged-0.8.6.1-b8ad9898ddb911b262ff25992940e5c5d12e554f9af5eea4acc386a79c44ecd8"
+        },
+        {
+          "num": 1,
+          "time": 1666700004558.4912,
+          "uid": "tagged-0.8.6.1-b8ad9898ddb911b262ff25992940e5c5d12e554f9af5eea4acc386a79c44ecd8"
+        },
+        {
+          "num": 0,
+          "time": 1666700009373.8625,
+          "uid": "distributive-0.6.2.1-01c5dddc2175f6aa8ea35e12705d10b1efcd1690348c02f547eb227e5780b5cb"
+        },
+        {
+          "num": 0,
+          "time": 1666700010014.1187,
+          "uid": "distributive-0.6.2.1-01c5dddc2175f6aa8ea35e12705d10b1efcd1690348c02f547eb227e5780b5cb"
+        },
+        {
+          "num": 1,
+          "time": 1666700010001.2532,
+          "uid": "distributive-0.6.2.1-01c5dddc2175f6aa8ea35e12705d10b1efcd1690348c02f547eb227e5780b5cb"
+        },
+        {
+          "num": 1,
+          "time": 1666700009944.501,
+          "uid": "distributive-0.6.2.1-01c5dddc2175f6aa8ea35e12705d10b1efcd1690348c02f547eb227e5780b5cb"
+        },
+        {
+          "num": 1,
+          "time": 1666700009944.4204,
+          "uid": "distributive-0.6.2.1-01c5dddc2175f6aa8ea35e12705d10b1efcd1690348c02f547eb227e5780b5cb"
+        },
+        {
+          "num": 1,
+          "time": 1666700009434.8567,
+          "uid": "distributive-0.6.2.1-01c5dddc2175f6aa8ea35e12705d10b1efcd1690348c02f547eb227e5780b5cb"
+        },
+        {
+          "num": 0,
+          "time": 1666700010931.4307,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 0,
+          "time": 1666700012381.659,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012354.7573,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012345.9426,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012333.4187,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012321.636,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012318.2544,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012286.8877,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012286.861,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012205.4385,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011970.3782,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011902.1218,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011680.1238,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011642.7021,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011312.7944,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 2,
+          "time": 1666700011251.382,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 2,
+          "time": 1666700011251.33,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012370.132,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012345.9753,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012205.4148,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012205.3364,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700012205.3057,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011680.1875,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011680.183,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011680.174,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011672.8306,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011665.6357,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011642.796,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011642.6487,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011642.5886,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011305.431,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 3,
+          "time": 1666700011251.4075,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 1,
+          "time": 1666700011206.0996,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 1,
+          "time": 1666700011205.8674,
+          "uid": "comonad-5.0.8-f648efea4bfda7961f760fbe9fff79933fe89b4ca2f3c9bcfd85670379d4f5d1"
+        },
+        {
+          "num": 0,
+          "time": 1666700013315.92,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 0,
+          "time": 1666700018416.3608,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700018398.832,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700017283.4888,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700016936.302,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700016299.7615,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700015818.6184,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700015656.2544,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700015099.7017,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014836.3064,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014498.9988,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014336.2935,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 3,
+          "time": 1666700013876.3232,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700017011.261,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700016876.3926,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700015775.3801,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700015319.6492,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014536.684,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.2166,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.2126,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.1992,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.1956,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.191,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.1868,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.182,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.1743,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.1223,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014356.0662,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700014216.222,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 4,
+          "time": 1666700013939.42,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 3,
+          "time": 1666700013909.4211,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 3,
+          "time": 1666700013646.1462,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 2,
+          "time": 1666700013630.4956,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 1,
+          "time": 1666700013626.0684,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 1,
+          "time": 1666700013626.052,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 1,
+          "time": 1666700013623.9338,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 1,
+          "time": 1666700013623.716,
+          "uid": "bifunctors-5.5.13-inplace"
+        },
+        {
+          "num": 0,
+          "time": 1666700006053.3188,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 0,
+          "time": 1666700010253.741,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 2,
+          "time": 1666700006327.5486,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 2,
+          "time": 1666700006327.4285,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 2,
+          "time": 1666700010236.6252,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 2,
+          "time": 1666700006253.527,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 2,
+          "time": 1666700006174.118,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 1,
+          "time": 1666700006138.9192,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 1,
+          "time": 1666700006135.9497,
+          "uid": "th-abstraction-0.4.5.0-7f85264de88d3be93121af2e054e9626adf2e658d32213008aae43e7b798476b"
+        },
+        {
+          "num": 0,
+          "time": 1666700002475.7114,
+          "uid": "base-orphans-0.8.7-99b1f1f0f40e1b1094665084fb651ca24b9b681fc3a099e7a01ba3ffc492b447"
+        },
+        {
+          "num": 0,
+          "time": 1666700002595.9653,
+          "uid": "base-orphans-0.8.7-99b1f1f0f40e1b1094665084fb651ca24b9b681fc3a099e7a01ba3ffc492b447"
+        },
+        {
+          "num": 2,
+          "time": 1666700002584.3093,
+          "uid": "base-orphans-0.8.7-99b1f1f0f40e1b1094665084fb651ca24b9b681fc3a099e7a01ba3ffc492b447"
+        },
+        {
+          "num": 2,
+          "time": 1666700002583.882,
+          "uid": "base-orphans-0.8.7-99b1f1f0f40e1b1094665084fb651ca24b9b681fc3a099e7a01ba3ffc492b447"
+        },
+        {
+          "num": 2,
+          "time": 1666700002551.97,
+          "uid": "base-orphans-0.8.7-99b1f1f0f40e1b1094665084fb651ca24b9b681fc3a099e7a01ba3ffc492b447"
+        },
+        {
+          "num": 1,
+          "time": 1666700002531.5103,
+          "uid": "base-orphans-0.8.7-99b1f1f0f40e1b1094665084fb651ca24b9b681fc3a099e7a01ba3ffc492b447"
+        },
+        {
+          "num": 1,
+          "time": 1666700002531.2976,
+          "uid": "base-orphans-0.8.7-99b1f1f0f40e1b1094665084fb651ca24b9b681fc3a099e7a01ba3ffc492b447"
+        },
+        {
+          "num": 0,
+          "time": 1666700003506.4983,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 0,
+          "time": 1666700006326.9312,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700006281.6152,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700006309.0254,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700006262.4133,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700006189.996,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700006189.9465,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700006189.9092,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700006189.8928,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700003676.5178,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 2,
+          "time": 1666700003636.626,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 1,
+          "time": 1666700003634.948,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        },
+        {
+          "num": 1,
+          "time": 1666700003618.8987,
+          "uid": "indexed-traversable-0.1.2-09b29ade42fdba3bd73798b190dd24a7083d681c48f0a0489fd7d7ce1cff4c3a"
+        }
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {"type": "collect", "sort": {"field": "time"}},
+        {"type": "formula", "expr": "toNumber(datum[\"time\"])", "as": "time"},
+        {
+          "type": "impute",
+          "field": "num",
+          "groupby": ["uid"],
+          "key": "time",
+          "method": "value",
+          "value": null
+        },
+        {
+          "type": "window",
+          "sort": {"field": "time", "order": "ascending"},
+          "as": ["imputed_num_value"],
+          "ops": ["prev_value"],
+          "fields": ["num"],
+          "frame": [null, null],
+          "ignorePeers": false,
+          "groupby": ["uid"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.num === null ? datum.imputed_num_value : datum.num",
+          "as": "num"
+        },
+        {
+          "type": "stack",
+          "groupby": ["time"],
+          "field": "num",
+          "sort": {"field": ["uid"], "order": ["descending"]},
+          "as": ["num_start", "num_end"],
+          "offset": "zero"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "unit",
+      "value": {},
+      "on": [
+        {"events": "mousemove", "update": "isTuple(group()) ? group() : unit"}
+      ]
+    },
+    {
+      "name": "sel_uid_legend",
+      "value": null,
+      "on": [
+        {
+          "events": [
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "uid_legend_symbols"
+            },
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "uid_legend_labels"
+            },
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "uid_legend_entries"
+            }
+          ],
+          "update": "datum.value || item().items[0].items[0].datum.value",
+          "force": true
+        },
+        {
+          "events": [{"source": "view", "type": "click"}],
+          "update": "!event.item || !datum ? null : sel_uid_legend",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "sel",
+      "update": "vlSelectionResolve(\"sel_store\", \"union\", true, true)"
+    },
+    {
+      "name": "sel_tuple",
+      "update": "sel_uid_legend !== null ? {fields: sel_tuple_fields, values: [sel_uid_legend]} : null"
+    },
+    {"name": "sel_tuple_fields", "value": [{"type": "E", "field": "uid"}]},
+    {
+      "name": "sel_toggle",
+      "value": false,
+      "on": [
+        {
+          "events": {"merge": [{"source": "view", "type": "click"}]},
+          "update": "event.shiftKey"
+        }
+      ]
+    },
+    {
+      "name": "sel_modify",
+      "on": [
+        {
+          "events": {"signal": "sel_tuple"},
+          "update": "modify(\"sel_store\", sel_toggle ? null : sel_tuple, sel_toggle ? null : true, sel_toggle ? sel_tuple : null)"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "pathgroup",
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "faceted_path_main",
+          "data": "data_0",
+          "groupby": ["uid"]
+        }
+      },
+      "encode": {
+        "update": {
+          "width": {"field": {"group": "width"}},
+          "height": {"field": {"group": "height"}}
+        }
+      },
+      "marks": [
+        {
+          "name": "marks",
+          "type": "area",
+          "style": ["area"],
+          "sort": {"field": "datum[\"time\"]"},
+          "interactive": true,
+          "from": {"data": "faceted_path_main"},
+          "encode": {
+            "update": {
+              "interpolate": {"value": "step-after"},
+              "orient": {"value": "vertical"},
+              "tooltip": {
+                "signal": "{\"time\": format(datum[\"time\"], \"\"), \"num\": format(datum[\"num\"], \"\"), \"uid\": isValid(datum[\"uid\"]) ? datum[\"uid\"] : \"\"+datum[\"uid\"]}"
+              },
+              "fill": {"scale": "color", "field": "uid"},
+              "description": {
+                "signal": "\"time: \" + (format(datum[\"time\"], \"\")) + \"; num: \" + (format(datum[\"num\"], \"\")) + \"; uid: \" + (isValid(datum[\"uid\"]) ? datum[\"uid\"] : \"\"+datum[\"uid\"])"
+              },
+              "x": {"scale": "x", "field": "time"},
+              "y": {"scale": "y", "field": "num_end"},
+              "y2": {"scale": "y", "field": "num_start"},
+              "defined": {
+                "signal": "isValid(datum[\"time\"]) && isFinite(+datum[\"time\"]) && isValid(datum[\"num\"]) && isFinite(+datum[\"num\"])"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {"data": "data_0", "field": "time"},
+      "range": [0, {"signal": "width"}],
+      "nice": true,
+      "zero": false
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {"data": "data_0", "fields": ["num_start", "num_end"]},
+      "range": [{"signal": "height"}, 0],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "data_0", "field": "uid", "sort": true},
+      "range": "category"
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "gridScale": "y",
+      "grid": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "gridScale": "x",
+      "grid": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "time",
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "num",
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "symbolType": "circle",
+      "title": "uid",
+      "encode": {
+        "labels": {
+          "name": "uid_legend_labels",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {
+                "test": "(!length(data(\"sel_store\")) || (sel[\"uid\"] && indexof(sel[\"uid\"], datum.value) >= 0))",
+                "value": 1
+              },
+              {"value": 0.35}
+            ]
+          }
+        },
+        "symbols": {
+          "name": "uid_legend_symbols",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {
+                "test": "(!length(data(\"sel_store\")) || (sel[\"uid\"] && indexof(sel[\"uid\"], datum.value) >= 0))",
+                "value": 1
+              },
+              {"value": 0.35}
+            ]
+          }
+        },
+        "entries": {
+          "name": "uid_legend_entries",
+          "interactive": true,
+          "update": {"fill": {"value": "transparent"}}
+        }
+      }
+    }
+  ],
+  "config": {}
+}

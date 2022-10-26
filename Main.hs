@@ -13,13 +13,15 @@
 {-# OPTIONS_GHC -Wall #-}
 {-# LANGUAGE ViewPatterns #-}
 {-# LANGUAGE DeriveFunctor #-}
+{-# LANGUAGE TemplateHaskell #-}
 module Main(main) where
 
-import Data.Aeson (Value, encode, ToJSON, toJSON, object, (.=), FromJSON, decodeStrict)
+import Data.Aeson (Value, encode, ToJSON, toJSON, object, (.=), FromJSON, decodeStrict, encodeFile)
 import Data.String
 import Data.Text (Text, append)
 import qualified Data.Text as T
-import qualified Data.Text.Lazy.Encoding as T
+import qualified Data.Text.Lazy.IO as TL
+import qualified Data.Text.Lazy.Encoding as TL
 import qualified Data.Text.Lazy as TL
 --import Text.Blaze.Html
 import qualified Text.Blaze.Html5            as H hiding (main, map)
@@ -58,11 +60,9 @@ main = do
   [dir] <- getArgs
   els <- listDirectory dir
   res <- parseMany dir els
---  analyse res
   render "owned.html" owned res
   render "free.html" free res
   render "pending.html" pending res
-  render2 res
   let res2 =  simulate (minimum (concatMap (map time . jsems) res)) res
   let elapsed = round (elapsed_time res2 / 1000 )
       (elapsed_m :: Int, elapsed_s) = elapsed `divMod` 60
@@ -153,15 +153,20 @@ data JSemMessage = JSemMessage { name :: String, owned, free, pending :: Int } d
 
 render :: FilePath -> (JSemMessage -> Int) -> [Result] -> IO ()
 render fname sel res =
-  let cars =  dataFromRows [] . foldr (.) id
-                 [ dataRow [ ( "uid", Str uid )
-                           , ( "time", Number time )
-                           , ( "num", Number (fromIntegral (sel message)) ) ]
+  let lines =
+                 [  object [( "uid" .= uid )
+                          , "time" .= time
+                           , ("num" .= (fromIntegral (sel message) :: Int) ) ]
                  | Result{..} <- res
                  , Just uid <- [unit_name]
                  , JSem{..} <- jsems
-                 ] $ []
+                 ]
+  in do
+    let f = TL.fromStrict (decodeASCII $(embedFile "owned_template.html"))
+    let res = TL.replace "MODULES_DATA" (TL.decodeASCII (encode lines)) f
+    TL.writeFile fname res
 
+{-
       select_ = selection  . select "sel" Multi [ BindLegend (BLField "uid") ]
 
 
@@ -174,7 +179,9 @@ render fname sel res =
       bkg = background "rgba(0, 0, 0, 0.05)"
 
   in toHtmlFile fname $ toVegaLite [ select_ [], width 1000, height 1000, bkg, cars, mark Area [MTooltip TTEncoding], enc [] ]
+  -}
 
+{-
 render2 :: [Result] -> IO ()
 render2 res =
   let cars =  dataFromRows [] . foldr (.) id
@@ -214,6 +221,7 @@ render2 res =
       c2 = asSpec [ reso [], width 1000, height 1000, trans [], bkg, mark Area [MTooltip TTEncoding], enc2 [] ]
 
   in toHtmlFile "render2.html" $ toVegaLite [reso [], cars,  layer [ c1, c2]]
+  -}
 
 
 

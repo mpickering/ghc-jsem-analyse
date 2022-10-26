@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var yourVlSpec = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "rgba(0, 0, 0, 0.05)",
+  "padding": 5,
+  "width": 1000,
+  "height": 1000,
+  "style": "cell",
+  "data": [
+    {"name": "sel_store"},
+    {
+      "name": "source_0"
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {"type": "collect", "sort": {"field": "time"}},
+        {"type": "formula", "expr": "toNumber(datum[\"time\"])", "as": "time"},
+        {
+          "type": "impute",
+          "field": "num",
+          "groupby": ["uid"],
+          "key": "time",
+          "method": "value",
+          "value": null
+        },
+        {
+          "type": "window",
+          "sort": {"field": "time", "order": "ascending"},
+          "as": ["imputed_num_value"],
+          "ops": ["prev_value"],
+          "fields": ["num"],
+          "frame": [null, null],
+          "ignorePeers": false,
+          "groupby": ["uid"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.num === null ? datum.imputed_num_value : datum.num",
+          "as": "num"
+        },
+        {
+          "type": "stack",
+          "groupby": ["time"],
+          "field": "num",
+          "sort": {"field": ["uid"], "order": ["descending"]},
+          "as": ["num_start", "num_end"],
+          "offset": "zero"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "unit",
+      "value": {},
+      "on": [
+        {"events": "mousemove", "update": "isTuple(group()) ? group() : unit"}
+      ]
+    },
+    {
+      "name": "sel_uid_legend",
+      "value": null,
+      "on": [
+        {
+          "events": [
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "uid_legend_symbols"
+            },
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "uid_legend_labels"
+            },
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "uid_legend_entries"
+            }
+          ],
+          "update": "datum.value || item().items[0].items[0].datum.value",
+          "force": true
+        },
+        {
+          "events": [{"source": "view", "type": "click"}],
+          "update": "!event.item || !datum ? null : sel_uid_legend",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "sel",
+      "update": "vlSelectionResolve(\"sel_store\", \"union\", true, true)"
+    },
+    {
+      "name": "sel_tuple",
+      "update": "sel_uid_legend !== null ? {fields: sel_tuple_fields, values: [sel_uid_legend]} : null"
+    },
+    {"name": "sel_tuple_fields", "value": [{"type": "E", "field": "uid"}]},
+    {
+      "name": "sel_toggle",
+      "value": false,
+      "on": [
+        {
+          "events": {"merge": [{"source": "view", "type": "click"}]},
+          "update": "event.shiftKey"
+        }
+      ]
+    },
+    {
+      "name": "sel_modify",
+      "on": [
+        {
+          "events": {"signal": "sel_tuple"},
+          "update": "modify(\"sel_store\", sel_toggle ? null : sel_tuple, sel_toggle ? null : true, sel_toggle ? sel_tuple : null)"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "pathgroup",
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "faceted_path_main",
+          "data": "data_0",
+          "groupby": ["uid"]
+        }
+      },
+      "encode": {
+        "update": {
+          "width": {"field": {"group": "width"}},
+          "height": {"field": {"group": "height"}}
+        }
+      },
+      "marks": [
+        {
+          "name": "marks",
+          "type": "area",
+          "style": ["area"],
+          "sort": {"field": "datum[\"time\"]"},
+          "interactive": true,
+          "from": {"data": "faceted_path_main"},
+          "encode": {
+            "update": {
+              "interpolate": {"value": "step-after"},
+              "orient": {"value": "vertical"},
+              "tooltip": {
+                "signal": "{\"time\": format(datum[\"time\"], \"\"), \"num\": format(datum[\"num\"], \"\"), \"uid\": isValid(datum[\"uid\"]) ? datum[\"uid\"] : \"\"+datum[\"uid\"]}"
+              },
+              "fill": {"scale": "color", "field": "uid"},
+              "description": {
+                "signal": "\"time: \" + (format(datum[\"time\"], \"\")) + \"; num: \" + (format(datum[\"num\"], \"\")) + \"; uid: \" + (isValid(datum[\"uid\"]) ? datum[\"uid\"] : \"\"+datum[\"uid\"])"
+              },
+              "x": {"scale": "x", "field": "time"},
+              "y": {"scale": "y", "field": "num_end"},
+              "y2": {"scale": "y", "field": "num_start"},
+              "defined": {
+                "signal": "isValid(datum[\"time\"]) && isFinite(+datum[\"time\"]) && isValid(datum[\"num\"]) && isFinite(+datum[\"num\"])"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {"data": "data_0", "field": "time"},
+      "range": [0, {"signal": "width"}],
+      "nice": true,
+      "zero": false
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {"data": "data_0", "fields": ["num_start", "num_end"]},
+      "range": [{"signal": "height"}, 0],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "data_0", "field": "uid", "sort": true},
+      "range": "category"
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "gridScale": "y",
+      "grid": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "gridScale": "x",
+      "grid": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "time",
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "num",
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "symbolType": "circle",
+      "title": "uid",
+      "encode": {
+        "labels": {
+          "name": "uid_legend_labels",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {
+                "test": "(!length(data(\"sel_store\")) || (sel[\"uid\"] && indexof(sel[\"uid\"], datum.value) >= 0))",
+                "value": 1
+              },
+              {"value": 0.35}
+            ]
+          }
+        },
+        "symbols": {
+          "name": "uid_legend_symbols",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {
+                "test": "(!length(data(\"sel_store\")) || (sel[\"uid\"] && indexof(sel[\"uid\"], datum.value) >= 0))",
+                "value": 1
+              },
+              {"value": 0.35}
+            ]
+          }
+        },
+        "entries": {
+          "name": "uid_legend_entries",
+          "interactive": true,
+          "update": {"fill": {"value": "transparent"}}
+        }
+      }
+    }
+  ],
+  "config": {}
+      };
+      vegaEmbed('#vis', yourVlSpec).then(res=> res.view.insert('source_0', MODULES_DATA).run());
+    </script>
+  </body>
+</html>
